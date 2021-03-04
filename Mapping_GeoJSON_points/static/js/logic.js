@@ -1,3 +1,4 @@
+  
 // Add console.log to check to see if our code is working.
 console.log("working");
 
@@ -39,12 +40,12 @@ let map = L.map("mapid", {
 L.control.layers(baseMaps).addTo(map);
 
 // Accessing the airport GeoJSON URL
-let airportData = "https://raw.githubusercontent.com/shivam0921/Mapping_Earthquakes/main/majorAirports.json";
+let airportData =
+  "https://raw.githubusercontent.com/shivam0921/Mapping_Earthquakes/Mapping_GeoJSON_Points/majorAirports.json";
 
-// Grab GeoJSON data
-  d3.json(airportData).then(function(data) {
+// Grabbing our GeoJSON data.
+d3.json(airportData).then(function (data) {
   console.log(data);
-
-  // Create a GeoJSON layer with retrieved data
+  // Creating a GeoJSON layer with the retrieved data.
   L.geoJson(data).addTo(map);
 });
